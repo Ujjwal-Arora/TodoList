@@ -41,7 +41,7 @@ workflows:
           xcodebuild test -project TodoList1.xcodeproj \
             -scheme TodoList1 \
             -sdk iphonesimulator \
-            -destination "platform=iOS Simulator,name=iPhone SE (3rd generation),OS=17.0" \
+            -destination "platform=iOS Simulator,name=iPhone SE (3rd generation),OS=18.0" \
             CODE_SIGN_IDENTITY= CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
 
     publishing:
