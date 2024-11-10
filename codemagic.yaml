@@ -5,7 +5,7 @@ workflows:
           - name: CICD started
             script: echo "Welcome to your CICD setup"
           - name: Build the .app
-            script: xcodebuild build -project TodoList1.xcodeproj -scheme TodoList CODE_SIGN_IDENTITY= CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+            script: xcodebuild build -project TodoList1.xcodeproj -scheme TodoList1 CODE_SIGN_IDENTITY= CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
         publishing:
           email:
             recipients:
