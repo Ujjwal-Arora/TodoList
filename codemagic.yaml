@@ -11,7 +11,6 @@ workflows:
               xcode-project run-tests \
               --workspace TodoList1.xcodeproj \
               --scheme TodoList1 \
-    test_report: build/ios/test/*.xml
         publishing:
           email:
             recipients:
