@@ -1,0 +1,10 @@
+workflows:
+    learn-workflow:
+        name: TodoList Pipeline
+        scripts:
+          - name: CICD started
+            script: echo "Welcome to your CICD setup"
+        publishing:
+          email:
+            recipients:
+              - ukarora9@gmail.com
