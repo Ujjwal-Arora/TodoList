@@ -1,17 +1,50 @@
+#workflows:
+#    learn-workflow:
+#        name: TodoList Pipeline
+#        scripts:
+#          - name: CICD started
+#            script: echo "Welcome to your CICD setup"
+#          - name: Build the .app
+#            script: xcodebuild build -project TodoList1.xcodeproj -scheme TodoList1 CODE_SIGN_IDENTITY= CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+#          - name: iOS test
+#            script: | 
+#              xcode-project run-tests \
+#              --workspace TodoList1.xcodeproj \
+#              --scheme TodoList1 \
+#              
+#        name: iOS test
+#        script: |
+#          xcodebuild test -project TodoList1.xcodeproj \
+#            -scheme TodoList1 \
+#            -sdk iphonesimulator \
+#            -destination "platform=iOS Simulator,name=iPhone SE (3rd generation),OS=18.0" \
+#            CODE_SIGN_IDENTITY= CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+#
+#              
+#        publishing:
+#          email:
+#            recipients:
+#              - ukarora9@gmail.com
 workflows:
-    learn-workflow:
-        name: TodoList Pipeline
-        scripts:
-          - name: CICD started
-            script: echo "Welcome to your CICD setup"
-          - name: Build the .app
-            script: xcodebuild build -project TodoList1.xcodeproj -scheme TodoList1 CODE_SIGN_IDENTITY= CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
-          - name: iOS test
-            script: | 
-              xcode-project run-tests \
-              --workspace TodoList1.xcodeproj \
-              --scheme TodoList1 \
-        publishing:
-          email:
-            recipients:
-              - ukarora9@gmail.com
+  learn-workflow:
+    name: TodoList Pipeline
+    scripts:
+      - name: CICD started
+        script: echo "Welcome to your CICD setup"
+        
+      - name: Build the .app
+        script: |
+          xcodebuild build -project TodoList1.xcodeproj -scheme TodoList1 CODE_SIGN_IDENTITY= CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+
+      - name: iOS test
+        script: |
+          xcodebuild test -project TodoList1.xcodeproj \
+            -scheme TodoList1 \
+            -sdk iphonesimulator \
+            -destination "platform=iOS Simulator,name=iPhone SE (3rd generation),OS=18.0" \
+            CODE_SIGN_IDENTITY= CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+
+    publishing:
+      email:
+        recipients:
+          - ukarora9@gmail.com
